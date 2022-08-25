@@ -8,7 +8,7 @@ class Calculadora {
     };
 
     this.capturaEnter = () =>
-      document.addEventListener("keypress", (e) => {
+      document.addEventListener("keyup", (e) => {
         if (e.key === 'Enter') {
           this.realizaConta();
         }
