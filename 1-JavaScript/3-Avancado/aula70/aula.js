@@ -1,13 +1,13 @@
 // Factory functions / Constructor functions
-function criaPessoa(nome, sobrenome) {
-  return {
-    nome, 
-    sobrenome,
-    nomeCompleto(){
-      return `${this.nome} ${this.sobrenome}`
-    },
-  };
+function Pessoa(nome, sobrenome) {
+  this.nome = nome;
+  this.sobrenome = sobrenome;
+
+  Object.freeze(this);
 }
 
-const p1 = criaPessoa('Luiz', 'Otávio')
-console.log(p1.nomeCompleto())
+//{} <- this(palavra chave)
+const p1 = new Pessoa("Luiz", "Miranda");
+delete p1.nome;
+const p2 = new Pessoa("Maria", "Miranda");
+console.log(p1, p2);
